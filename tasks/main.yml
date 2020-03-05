@@ -1,6 +1,8 @@
 ---
 # tasks file for ansible-role-test-docker-db
 
+- include: docker.yml
+
 - name: create timescaledb container
   become: true
   docker_container:
