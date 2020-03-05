@@ -1,0 +1,12 @@
+---
+# tasks file for ansible-role-test-docker-db
+
+- name: create timescaledb container
+  become: true
+  docker_container:
+    name: "{{ debian_docker_timescaledb.name }}"
+    image: "{{ debian_docker_timescaledb.image }}"
+    privileged: "{{ debian_docker_timescaledb.privileged }}"
+    ports: "{{ debian_docker_timescaledb.ports }}"
+    env: "{{ debian_docker_timescaledb.env }}"
+    network_mode: host

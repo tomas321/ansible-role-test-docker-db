@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-role-test-docker-db"
+      include_role:
+        name: "ansible-role-test-docker-db"
